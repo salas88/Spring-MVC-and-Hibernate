@@ -2,9 +2,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>
-			Users list
-		</title>
+		<title>Users list</title>
+		<link type="text/css"
+			  rel="stylesheet"
+			  href="${pageContext.request.contextPath }/resources/css/style.css"/>
 	</head>
 	<body>
 		<div id="wrapper">
