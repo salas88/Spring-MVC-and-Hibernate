@@ -22,6 +22,14 @@ public class ServiceImplementation implements IService {
 				
 	}
 
+	@Override
+	@Transactional
+	public void saveCustomer(User theUser) {
+		
+		iDao.saveUser(theUser);
+		
+	}
+
 	
 
 }

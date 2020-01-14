@@ -5,9 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.vladyslav.spring.DAO.IDAO;
 import com.vladyslav.spring.Service.IService;
 import com.vladyslav.spring.entity.User;
 
@@ -27,6 +28,19 @@ public class UserController {
 		theModel.addAttribute("users", users);
 		
 		return "users-list";
+	}
+	
+	@RequestMapping("/showFormForAdd")
+	public String showFormForAdd(Model theModel) {
+		User theUser = new User();
+		theModel.addAttribute("user", theUser);
+		return "form-new-user";
+	}
+	
+	@PostMapping("/saveUser")
+	public String saveUser(@ModelAttribute("user") User theUser) {
+		iService.saveCustomer(theUser);
+		return "redirect:/users/list";
 	}
 
 }

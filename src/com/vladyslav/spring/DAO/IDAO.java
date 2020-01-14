@@ -8,4 +8,6 @@ public interface IDAO {
 	
 	public List<User> getUsers();
 
+	public void saveUser(User theUser);
+
 }

@@ -29,4 +29,11 @@ public class DAOImplement implements IDAO{
 		return theList;
 	}
 
+	@Override
+	public void saveUser(User theUser) {
+		Session currentSession = sessionFactoru.getCurrentSession();
+		currentSession.save(theUser);
+		
+	}
+
 }

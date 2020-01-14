@@ -7,4 +7,6 @@ import com.vladyslav.spring.entity.User;
 public interface IService {
 	
 	public List<User> getUsers();
+
+	public void saveCustomer(User theUser);
 }
