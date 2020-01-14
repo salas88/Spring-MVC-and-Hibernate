@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.vladyslav.spring.DAO.IDAO;
+import com.vladyslav.spring.Service.IService;
 import com.vladyslav.spring.entity.User;
 
 @Controller
@@ -15,13 +16,13 @@ import com.vladyslav.spring.entity.User;
 public class UserController {
 	
 	@Autowired
-	private IDAO iDao;
+	private IService iService;
 	
 	
 	@RequestMapping("/list")
 	public String showPage(Model theModel) {
 		
-		List<User> users = iDao.getUsers();
+		List<User> users = iService.getUsers();
 		
 		theModel.addAttribute("users", users);
 		

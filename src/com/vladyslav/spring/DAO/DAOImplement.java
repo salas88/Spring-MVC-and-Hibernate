@@ -18,7 +18,6 @@ public class DAOImplement implements IDAO{
 	private SessionFactory sessionFactoru;
 
 	@Override
-	@Transactional
 	public List<User> getUsers() {
 		
 		Session currentSession = sessionFactoru.getCurrentSession();
