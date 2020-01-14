@@ -15,6 +15,12 @@
 		</div>
 		<div id="container">
 			<div id="context">
+			
+			<!-- Add a new button: Add new User -->
+			
+			<input type="button" value="Add User"
+					onClick="window.location.href='showFormForAdd'; return false"
+					class="add-button"/>
 				<table>
 					<tr>
 						<th>First name</th>	
