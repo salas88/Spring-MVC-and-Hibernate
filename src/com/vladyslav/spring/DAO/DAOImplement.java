@@ -31,7 +31,9 @@ public class DAOImplement implements IDAO{
 
 	@Override
 	public void saveUser(User theUser) {
+		
 		Session currentSession = sessionFactoru.getCurrentSession();
+		
 		currentSession.saveOrUpdate(theUser);
 		
 	}
@@ -44,5 +46,18 @@ public class DAOImplement implements IDAO{
 		
 		return theUser;
 	}
+
+	@Override
+	public void deleteUser(int theId) {
+		Session currentSession = sessionFactoru.getCurrentSession();
+		
+		Query<User> query = currentSession.createQuery("delete from User where id=:userId");
+		
+		query.setParameter("userId", theId);
+		
+		query.executeUpdate();
+	}
+
+	
 
 }

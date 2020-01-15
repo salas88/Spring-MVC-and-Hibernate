@@ -33,9 +33,26 @@ public class ServiceImplementation implements IService {
 	@Override
 	@Transactional
 	public User getOneUser(int theId) {
-		
+		// TODO Auto-generated method stub
 		return iDao.getOneUser(theId);
 	}
+
+	@Override
+	@Transactional
+	public void deleteUser(int theId) {
+		iDao.deleteUser(theId);
+		
+	}
+
+	
+
+
+
+
+
+	
+
+	
 
 	
 

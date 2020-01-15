@@ -11,4 +11,10 @@ public interface IService {
 	public void saveCustomer(User theUser);
 
 	public User getOneUser(int theId);
+
+	public void deleteUser(int theId);
+
+	
+
+	
 }

@@ -12,4 +12,8 @@ public interface IDAO {
 
 	public User getOneUser(int theId);
 
+	public void deleteUser(int theId);
+
+
+
 }

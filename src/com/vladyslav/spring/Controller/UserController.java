@@ -52,5 +52,14 @@ public class UserController {
 		
 		return "form-new-user";
 	}
+	
+	@RequestMapping("/delete")
+	public String deleteUser(@RequestParam("userId") int theId,Model theModel){
+		
+		iService.deleteUser(theId);
+		
+		return "redirect:/users/list";
+		
+	}
 
 }

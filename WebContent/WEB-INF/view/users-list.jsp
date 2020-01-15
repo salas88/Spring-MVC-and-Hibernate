@@ -25,7 +25,8 @@
 					<tr>
 						<th>First name</th>	
 						<th>Last name</th>	
-						<th>email</th>	
+						<th>Email</th>	
+						<th>Action</th>	
 					</tr>
 					<c:forEach var="tempUser" items="${users }">
 					
