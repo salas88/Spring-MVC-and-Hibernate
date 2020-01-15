@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.vladyslav.spring.Service.IService;
 import com.vladyslav.spring.entity.User;
@@ -41,6 +42,15 @@ public class UserController {
 	public String saveUser(@ModelAttribute("user") User theUser) {
 		iService.saveCustomer(theUser);
 		return "redirect:/users/list";
+	}
+	
+	@RequestMapping("/showFormForUpdate")
+	public String showFormForUpdate(@RequestParam("userId") int theId, Model theModel) {
+		
+		User theUser = iService.getOneUser(theId);
+		theModel.addAttribute("user", theUser);
+		
+		return "form-new-user";
 	}
 
 }

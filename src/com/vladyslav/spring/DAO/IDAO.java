@@ -10,4 +10,6 @@ public interface IDAO {
 
 	public void saveUser(User theUser);
 
+	public User getOneUser(int theId);
+
 }

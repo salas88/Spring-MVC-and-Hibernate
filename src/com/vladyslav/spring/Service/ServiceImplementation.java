@@ -30,6 +30,13 @@ public class ServiceImplementation implements IService {
 		
 	}
 
+	@Override
+	@Transactional
+	public User getOneUser(int theId) {
+		
+		return iDao.getOneUser(theId);
+	}
+
 	
 
 }

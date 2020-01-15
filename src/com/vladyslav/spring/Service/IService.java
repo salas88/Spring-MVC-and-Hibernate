@@ -9,4 +9,6 @@ public interface IService {
 	public List<User> getUsers();
 
 	public void saveCustomer(User theUser);
+
+	public User getOneUser(int theId);
 }

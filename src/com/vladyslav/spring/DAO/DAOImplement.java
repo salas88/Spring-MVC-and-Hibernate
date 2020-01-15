@@ -22,7 +22,7 @@ public class DAOImplement implements IDAO{
 		
 		Session currentSession = sessionFactoru.getCurrentSession();
 		
-		Query<User> theQuery = currentSession.createQuery("from User", User.class);
+		Query<User> theQuery = currentSession.createQuery("from User order by lastName", User.class);
 		
 		List<User> theList = theQuery.getResultList();
 		
@@ -32,8 +32,17 @@ public class DAOImplement implements IDAO{
 	@Override
 	public void saveUser(User theUser) {
 		Session currentSession = sessionFactoru.getCurrentSession();
-		currentSession.save(theUser);
+		currentSession.saveOrUpdate(theUser);
 		
+	}
+
+	@Override
+	public User getOneUser(int theId) {
+		Session currentSession = sessionFactoru.getCurrentSession();
+		
+		User theUser = currentSession.get(User.class, theId);
+		
+		return theUser;
 	}
 
 }

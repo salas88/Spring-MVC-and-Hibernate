@@ -28,10 +28,26 @@
 						<th>email</th>	
 					</tr>
 					<c:forEach var="tempUser" items="${users }">
+					
+					<!-- construct update link with customer id -->
+					<c:url var="updateLink" value="/users/showFormForUpdate">
+						<c:param name="userId" value="${tempUser.id }" />
+					</c:url>
+					
+					<!-- construct delete link with customer id -->
+					<c:url var="deleteLink" value="/users/delete">
+						<c:param name="userId" value="${tempUser.id }" />
+					</c:url>
 					<tr>
-						<td> ${tempUser.firstName } </th>
-						<td> ${tempUser.lastName } </th>
-						<td> ${tempUser.email } </th>
+						<td> ${tempUser.firstName } </td>
+						<td> ${tempUser.lastName } </td>
+						<td> ${tempUser.email } </td>
+						
+						<!--  -->
+						<td> <a href="${updateLink } ">Update</a>
+						|
+						<a href="${deleteLink } ">Delete</a>
+						</td>
 					</tr>
 					</c:forEach>
 				</table>
